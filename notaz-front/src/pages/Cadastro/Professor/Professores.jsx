@@ -234,7 +234,7 @@ function Professores() {
               <th>ID</th>
               <th>RA</th>
               <th>Nome do usuario</th>
-              <th>Acoes</th>
+              <th>Ações</th>
             </tr>
           </thead>
 
