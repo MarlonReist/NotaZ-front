@@ -1,19 +1,56 @@
 import { useState } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
+import {
+  BookOpen,
+  Calendar,
+  ChevronDown,
+  ClipboardCheck,
+  FileText,
+  FolderOpen,
+  GraduationCap,
+  LayoutDashboard,
+  NotebookPen,
+  School,
+  UserRound,
+  UsersRound,
+} from 'lucide-react'
 import './MainLayout.css'
 
 const cadastroItems = [
-  'Usuarios',
-  'Alunos',
-  'Professores',
-  'Turmas',
-  'Disciplinas',
-  'Avaliacoes',
+  { label: 'Usuários', path: '/usuarios', icon: UsersRound },
+  { label: 'Alunos', path: '/alunos', icon: GraduationCap },
+  { label: 'Professores', path: '/professores', icon: UserRound },
+  { label: 'Turmas', path: '/turmas', icon: School },
+  { label: 'Disciplinas', path: '/disciplinas', icon: BookOpen },
+  { label: 'Avaliações', path: '/avaliacoes', icon: ClipboardCheck },
 ]
 
-const mainItems = ['Notas', 'Aulas', 'Frequencia', 'Boletins']
+const mainItems = [
+  { label: 'Notas', path: '/notas', icon: FileText },
+  { label: 'Aulas', path: '/aulas', icon: Calendar },
+  { label: 'Frequência', path: '/frequencias', icon: NotebookPen },
+  { label: 'Boletins', path: '/boletins', icon: ClipboardCheck },
+]
 
-function MainLayout({ children, section, title }) {
-  const [cadastroAberto, setCadastroAberto] = useState(true)
+const pageTitles = {
+  '/': 'Visao geral',
+  '/dashboard': 'Visão geral',
+  '/usuarios': 'Usuários',
+  '/alunos': 'Alunos',
+  '/professores': 'Professores',
+  '/turmas': 'Turmas',
+  '/disciplinas': 'Disciplinas',
+  '/avaliacoes': 'Avaliações',
+  '/notas': 'Lançamento de notas',
+  '/aulas': 'Aulas',
+  '/frequencias': 'Frequência',
+  '/boletins': 'Boletins',
+}
+
+function MainLayout({ children }) {
+  const [cadastroAberto, setCadastroAberto] = useState(false)
+  const { pathname } = useLocation()
+  const currentPage = pageTitles[pathname] ?? pageTitles['/']
 
   return (
     <div className="app-shell">
@@ -22,53 +59,51 @@ function MainLayout({ children, section, title }) {
           <span className="sidebar__brand-icon">N</span>
           <div>
             <strong>NOTAZ</strong>
-            <small>Painel academico</small>
+            <small>Painel acadêmico</small>
           </div>
         </div>
 
         <nav className="sidebar__nav" aria-label="Menu principal">
-          <a className="sidebar__link sidebar__link--active" href="#dashboard">
-            Dashboard
-          </a>
+          <NavLink className="sidebar__link" to="/dashboard">
+            <LayoutDashboard size={18} />
+            <span>Dashboard</span>
+          </NavLink>
 
           <button
             type="button"
             className={`sidebar__toggle ${cadastroAberto ? 'sidebar__toggle--open' : ''}`}
             onClick={() => setCadastroAberto(!cadastroAberto)}
           >
-            <span>Cadastros</span>
-            <span className="sidebar__chevron">⌄</span>
+            <span className="sidebar__item-content">
+              <FolderOpen size={18} />
+              <span>Cadastros</span>
+            </span>
+            <ChevronDown className="sidebar__chevron" size={16} />
           </button>
 
           {cadastroAberto && (
             <div className="sidebar__submenu">
               {cadastroItems.map((item) => (
-                <a className="sidebar__link sidebar__link--nested" href="#" key={item}>
-                  {item}
-                </a>
+                <NavLink className="sidebar__link" to={item.path} key={item.path}>
+                  <item.icon size={18} />
+                  <span>{item.label}</span>
+                </NavLink>
               ))}
             </div>
           )}
 
           {mainItems.map((item) => (
-            <a className="sidebar__link" href="#" key={item}>
-              {item}
-            </a>
+            <NavLink className="sidebar__link" to={item.path} key={item.path}>
+              <item.icon size={18} />
+              <span>{item.label}</span>
+            </NavLink>
           ))}
         </nav>
       </aside>
 
       <div className="app-content">
         <header className="topbar">
-          <div>
-            <span className="topbar__eyebrow">{section}</span>
-            <h1>{title}</h1>
-          </div>
-
-          <div className="topbar__user">
-            <span>Admin</span>
-            <div className="topbar__avatar">A</div>
-          </div>
+          <h1>{currentPage}</h1>
         </header>
 
         <main className="page">{children}</main>
