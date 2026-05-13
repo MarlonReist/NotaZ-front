@@ -5,6 +5,7 @@ import Turmas from '../pages/Cadastro/Turma/Turmas'
 import Usuario from '../pages/Cadastro/Usuario/Usuario'
 import Professores from '../pages/Cadastro/Professor/Professores'
 import Disciplinas from '../pages/Cadastro/Disciplina/Disciplinas'
+import Alunos from '../pages/Cadastro/Aluno/Alunos'
 
 function AppRoutes() {
   return (
@@ -38,6 +39,11 @@ function AppRoutes() {
         <Route
           path="/disciplinas"
           element={<Disciplinas />}
+        />
+
+        <Route
+          path="/alunos"
+          element={<Alunos />}
         />
       </Routes>
     </MainLayout>
