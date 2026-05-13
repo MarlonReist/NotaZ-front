@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import MainLayout from '../layouts/MainLayout/MainLayout'
 import Dashboard from '../pages/Dashboard/Dashboard'
 import Turmas from '../pages/Cadastro/Turma/Turmas'
+import Usuario from '../pages/Cadastro/Usuario/Usuario'
 
 function AppRoutes() {
   return (
@@ -20,6 +21,11 @@ function AppRoutes() {
         <Route
           path="/turmas"
           element={<Turmas />}
+        />
+
+        <Route
+          path="/usuarios"
+          element={<Usuario />}
         />
       </Routes>
     </MainLayout>
