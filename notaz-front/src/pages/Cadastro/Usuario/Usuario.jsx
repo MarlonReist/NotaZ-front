@@ -327,7 +327,7 @@ function Usuario() {
               <th>Tipo</th>
               <th>Ativo</th>
               <th>Data de criacao</th>
-              <th>Acoes</th>
+              <th>Ações</th>
             </tr>
           </thead>
 

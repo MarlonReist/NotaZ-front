@@ -279,7 +279,7 @@ function Alunos() {
               <th>Nome do usuario</th>
               <th>Turma</th>
               <th>Data de nascimento</th>
-              <th>Acoes</th>
+              <th>Ações</th>
             </tr>
           </thead>
 

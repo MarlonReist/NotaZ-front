@@ -6,6 +6,7 @@ import Usuario from '../pages/Cadastro/Usuario/Usuario'
 import Professores from '../pages/Cadastro/Professor/Professores'
 import Disciplinas from '../pages/Cadastro/Disciplina/Disciplinas'
 import Alunos from '../pages/Cadastro/Aluno/Alunos'
+import Avaliacoes from '../pages/Cadastro/Avaliacao/Avaliacoes'
 
 function AppRoutes() {
   return (
@@ -44,6 +45,11 @@ function AppRoutes() {
         <Route
           path="/alunos"
           element={<Alunos />}
+        />
+
+        <Route
+          path="/avaliacoes"
+          element={<Avaliacoes />}
         />
       </Routes>
     </MainLayout>
