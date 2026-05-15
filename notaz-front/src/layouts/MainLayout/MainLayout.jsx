@@ -17,33 +17,33 @@ import {
 import './MainLayout.css'
 
 const cadastroItems = [
-  { label: 'Usuários', path: '/usuarios', icon: UsersRound },
+  { label: 'Usuarios', path: '/usuarios', icon: UsersRound },
   { label: 'Alunos', path: '/alunos', icon: GraduationCap },
   { label: 'Professores', path: '/professores', icon: UserRound },
   { label: 'Turmas', path: '/turmas', icon: School },
   { label: 'Disciplinas', path: '/disciplinas', icon: BookOpen },
-  { label: 'Avaliações', path: '/avaliacoes', icon: ClipboardCheck },
+  { label: 'Avaliacoes', path: '/avaliacoes', icon: ClipboardCheck },
 ]
 
 const mainItems = [
   { label: 'Notas', path: '/notas', icon: FileText },
   { label: 'Aulas', path: '/aulas', icon: Calendar },
-  { label: 'Frequência', path: '/frequencias', icon: NotebookPen },
+  { label: 'Frequencia', path: '/frequencias', icon: NotebookPen },
   { label: 'Boletins', path: '/boletins', icon: ClipboardCheck },
 ]
 
 const pageTitles = {
   '/': 'Visao geral',
-  '/dashboard': 'Visão geral',
-  '/usuarios': 'Usuários',
+  '/dashboard': 'Visao geral',
+  '/usuarios': 'Usuarios',
   '/alunos': 'Alunos',
   '/professores': 'Professores',
   '/turmas': 'Turmas',
   '/disciplinas': 'Disciplinas',
-  '/avaliacoes': 'Avaliações',
-  '/notas': 'Lançamento de notas',
+  '/avaliacoes': 'Avaliacoes',
+  '/notas': 'Lancamento de notas',
   '/aulas': 'Aulas',
-  '/frequencias': 'Frequência',
+  '/frequencias': 'Frequencia',
   '/boletins': 'Boletins',
 }
 
@@ -59,7 +59,7 @@ function MainLayout({ children }) {
           <span className="sidebar__brand-icon">N</span>
           <div>
             <strong>NOTAZ</strong>
-            <small>Painel acadêmico</small>
+            <small>Painel academico</small>
           </div>
         </div>
 

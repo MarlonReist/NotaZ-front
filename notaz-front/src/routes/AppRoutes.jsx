@@ -7,6 +7,7 @@ import Professores from '../pages/Cadastro/Professor/Professores'
 import Disciplinas from '../pages/Cadastro/Disciplina/Disciplinas'
 import Alunos from '../pages/Cadastro/Aluno/Alunos'
 import Avaliacoes from '../pages/Cadastro/Avaliacao/Avaliacoes'
+import Aulas from '../pages/Aula/Aulas'
 
 function AppRoutes() {
   return (
@@ -50,6 +51,11 @@ function AppRoutes() {
         <Route
           path="/avaliacoes"
           element={<Avaliacoes />}
+        />
+
+        <Route
+          path="/aulas"
+          element={<Aulas />}
         />
       </Routes>
     </MainLayout>
