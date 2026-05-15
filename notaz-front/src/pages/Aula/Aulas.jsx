@@ -301,7 +301,7 @@ function Aulas() {
               <th>Quantidade</th>
               <th>Disciplina</th>
               <th>Turma</th>
-              <th>Acoes</th>
+              <th>Ações</th>
             </tr>
           </thead>
 

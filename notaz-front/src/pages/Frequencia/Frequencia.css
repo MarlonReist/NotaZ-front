@@ -1,0 +1,385 @@
+.frequencias-page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.frequencias-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.frequencias-header p {
+  margin: 0;
+  color: var(--color-primary-dark);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.frequencias-header h2 {
+  margin: 6px 0 0;
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.frequencias-card {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+.frequencias-selector {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  align-items: end;
+  gap: 18px;
+  padding: 22px;
+  border-bottom: 1px solid var(--color-border);
+  background: #fbfdff;
+}
+
+.frequencias-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.frequencias-field span {
+  color: #475569;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.frequencias-field select {
+  width: 100%;
+  height: 46px;
+  padding: 0 42px 0 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text);
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #64748b 50%),
+    linear-gradient(135deg, #64748b 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 20px,
+    calc(100% - 12px) 20px;
+  background-repeat: no-repeat;
+  background-size:
+    6px 6px,
+    6px 6px;
+  appearance: none;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.frequencias-field select:focus {
+  outline: 0;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+}
+
+.frequencias-field select:disabled {
+  cursor: not-allowed;
+  color: #64748b;
+  background-color: #f1f5f9;
+}
+
+.frequencias-aula-info {
+  min-height: 46px;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.frequencias-aula-info span,
+.frequencias-aula-info strong {
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+}
+
+.frequencias-aula-info span {
+  color: #52627a;
+  background: #eef4fb;
+}
+
+.frequencias-aula-info strong {
+  color: var(--color-primary-dark);
+  background: var(--color-primary-light);
+}
+
+.frequencias-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--color-border);
+  background: #ffffff;
+}
+
+.frequencias-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.frequencias-summary span {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  border: 1px solid #dbe6f0;
+  border-radius: 999px;
+  color: #52627a;
+  background: #f8fafc;
+  font-size: 0.86rem;
+}
+
+.frequencias-summary strong {
+  color: var(--color-text);
+}
+
+.frequencias-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.frequencias-button {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-weight: 800;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.frequencias-button--primary {
+  border: 1px solid var(--color-primary);
+  color: #ffffff;
+  background: var(--color-primary);
+  box-shadow: 0 10px 22px rgba(34, 197, 94, 0.2);
+}
+
+.frequencias-button--primary:hover:not(:disabled) {
+  border-color: var(--color-primary-dark);
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.frequencias-button--secondary {
+  border: 1px solid var(--color-border);
+  color: #475569;
+  background: #ffffff;
+}
+
+.frequencias-button--secondary:hover:not(:disabled) {
+  border-color: #86efac;
+  color: var(--color-primary-dark);
+  background: var(--color-primary-light);
+}
+
+.frequencias-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+  transform: none;
+}
+
+.frequencias-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  padding: 22px;
+}
+
+.frequencias-student {
+  min-height: 82px;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #dbe6f0;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.frequencias-student:hover {
+  border-color: #86efac;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.07);
+  transform: translateY(-1px);
+}
+
+.frequencias-student--checked {
+  border-color: #86efac;
+  background: #f0fdf4;
+}
+
+.frequencias-student input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.frequencias-check {
+  width: 24px;
+  height: 24px;
+  display: inline-grid;
+  place-items: center;
+  border: 2px solid #cbd5e1;
+  border-radius: 7px;
+  background: #ffffff;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.frequencias-student--checked .frequencias-check {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+}
+
+.frequencias-student--checked .frequencias-check::after {
+  width: 6px;
+  height: 11px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  content: '';
+  transform: rotate(45deg);
+}
+
+.frequencias-student-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.frequencias-student-info strong {
+  color: var(--color-text);
+  font-size: 0.96rem;
+  line-height: 1.2;
+}
+
+.frequencias-student-info span {
+  color: var(--color-muted);
+  font-size: 0.84rem;
+}
+
+.frequencias-status {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.frequencias-status--present {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.frequencias-status--absent {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.frequencias-empty-state {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 32px;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.frequencias-empty-state svg {
+  color: #8ca0b8;
+}
+
+.frequencias-empty-state strong {
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.frequencias-empty-state span {
+  font-size: 0.92rem;
+}
+
+.frequencias-message {
+  margin: 18px 22px 0;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.frequencias-message--error {
+  border: 1px solid #fecaca;
+  color: var(--color-danger);
+  background: #fef2f2;
+}
+
+.frequencias-message--info {
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  background: #eff6ff;
+}
+
+.frequencias-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 40;
+  max-width: min(420px, calc(100vw - 48px));
+  padding: 14px 16px;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  color: var(--color-primary-dark);
+  background: #f0fdf4;
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.16);
+  font-size: 0.92rem;
+  font-weight: 800;
+}

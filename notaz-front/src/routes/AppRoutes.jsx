@@ -8,6 +8,7 @@ import Disciplinas from '../pages/Cadastro/Disciplina/Disciplinas'
 import Alunos from '../pages/Cadastro/Aluno/Alunos'
 import Avaliacoes from '../pages/Cadastro/Avaliacao/Avaliacoes'
 import Aulas from '../pages/Aula/Aulas'
+import Frequencia from '../pages/Frequencia/Frequencia'
 
 function AppRoutes() {
   return (
@@ -56,6 +57,11 @@ function AppRoutes() {
         <Route
           path="/aulas"
           element={<Aulas />}
+        />
+
+        <Route
+          path="/frequencias"
+          element={<Frequencia />}
         />
       </Routes>
     </MainLayout>
